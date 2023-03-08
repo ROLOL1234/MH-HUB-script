@@ -1,0 +1,73 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+
+local win = DiscordLib:Window("MH HUB")
+
+
+local m = win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
+
+local lp = m:Channel("LocalPlayers")
+local tp = m:Channel("Teleport")
+local bp = m:Channel("Function")
+local cl = m:Channel("Chatlog Bypass")
+local hi = m:Channel("Hidegui Keybind")
+
+lp:Slider("WalkSpeed", 0, 500, 16, function(t)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (t)
+end)
+lp:Slider("Gravity", 0, 1000, 196.2, function(t)
+game.Workspace.Gravity = (t)
+end)
+lp:Button("Default", function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+game.Workspace.Gravity = 196.2
+end)
+
+lp:Seperator()
+
+lp:Toggle("Always Super Speed",false, function(run)
+    
+if run == true then _G.Run1 = true end
+if run == false then _G.Run1 = false end
+while _G.Run1 do wait()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 53
+end
+if run == false then wait(1) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 38 end
+end)
+
+lp:Toggle("Noclip",false, function(Lol)
+if Lol == true then _G.Noclip = true end
+if Lol == false then _G.Noclip = false end
+local noclip = _G.Noclip char = game.Players.LocalPlayer.Character while _G.Noclip do if noclip == _G.Noclip then for _,v in pairs(char:children()) do pcall(function() if v.className == "Part" then v.CanCollide = false elseif v.ClassName == "Model" then v.Head.CanCollide = false end end) end end game:service("RunService").Stepped:wait() end
+end)
+
+
+bp:Bind("Left Speed Elastic", Enum.KeyCode.Z, function()
+game:GetService("ReplicatedStorage").Voicelines.Shoot.shoot3:Play()
+game:GetService("ReplicatedStorage").Remotes.Ball.Skill:InvokeServer(workspace.Objects.Balls.PLAIN_BALL,1)
+end)
+
+bp:Bind("Left Side Feint", Enum.KeyCode.X, function()
+game:GetService("ReplicatedStorage").Voicelines.Pass.pass1:Play()
+game:GetService("ReplicatedStorage").Remotes.Ball.Skill:InvokeServer(workspace.Objects.Balls.PLAIN_BALL,2)
+end)
+
+bp:Bind("Right Speed Elastic", Enum.KeyCode.C, function()
+game:GetService("ReplicatedStorage").Voicelines.Shoot.shoot1:Play()
+game:GetService("ReplicatedStorage").Remotes.Ball.Skill:InvokeServer(workspace.Objects.Balls.PLAIN_BALL,3)
+end)
+
+bp:Bind("Right Side Feint", Enum.KeyCode.V, function()
+game:GetService("ReplicatedStorage").Voicelines.Lift.lift1:Play()
+game:GetService("ReplicatedStorage").Remotes.Ball.Skill:InvokeServer(workspace.Objects.Balls.PLAIN_BALL,4)
+end)
+
+bp:Bind("Super Speed", Enum.KeyCode.B, function()
+game:GetService("ReplicatedStorage").Voicelines.Flow.flow:Play()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 53 wait(6) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22
+end)
+
+bp:Bind("Tackle", Enum.KeyCode.F, function()
+game:GetService("ReplicatedStorage").Remotes.Ball.Kick:FireServer(workspace.Objects.Balls.PLAIN_BALL,CFrame.new(459.616211, -34.8586655, -79.0812454, 0.0279533956, -3.58903662e-09, 0.999609232, -1.77047852e-08, 1, 4.08554213e-09, -0.999609232, -1.78120718e-08, 0.0279533956),75.97442798316479,"Straight")
+end)
+
