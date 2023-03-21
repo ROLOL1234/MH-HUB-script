@@ -62,12 +62,58 @@ game:GetService("ReplicatedStorage").Voicelines.Lift.lift1:Play()
 game:GetService("ReplicatedStorage").Remotes.Ball.Skill:InvokeServer(workspace.Objects.Balls.PLAIN_BALL,4)
 end)
 
-bp:Bind("Super Speed", Enum.KeyCode.B, function()
+bp:Bind("Super Speed", Enum.KeyCode.P, function()
 game:GetService("ReplicatedStorage").Voicelines.Flow.flow:Play()
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 53 wait(6) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22
 end)
 
-bp:Bind("Tackle", Enum.KeyCode.F, function()
+bp:Bind("Tackle", Enum.KeyCode.L, function()
 game:GetService("ReplicatedStorage").Remotes.Ball.Kick:FireServer(workspace.Objects.Balls.PLAIN_BALL,CFrame.new(459.616211, -34.8586655, -79.0812454, 0.0279533956, -3.58903662e-09, 0.999609232, -1.77047852e-08, 1, 4.08554213e-09, -0.999609232, -1.78120718e-08, 0.0279533956),75.97442798316479,"Straight")
 end)
+
+bp:Bind("Long Shot", Enum.KeyCode.B, function()
+local args = {
+    [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
+    [2] = game:GetService("Workspace").Objects.Characters.osuhawia.HumanoidRootPart.CFrame,
+    [3] = 100,
+    [4] = "Long Shot"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Ball"):WaitForChild("Kick"):FireServer(unpack(args))
+end)
+
+bp:Bind("Right Curved Shot", Enum.KeyCode.N, function()
+local args = {
+    [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
+    [2] = game:GetService("Workspace").Objects.Characters.osuhawia.HumanoidRootPart.CFrame,
+    [3] = 100,
+    [4] = "Right Curved"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Ball"):WaitForChild("Kick"):FireServer(unpack(args))
+end)
+
+bp:Bind("Left Curved Shot", Enum.KeyCode.J, function()
+local args = {
+    [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
+    [2] = game:GetService("Workspace").Objects.Characters.osuhawia.HumanoidRootPart.CFrame,
+    [3] = 100,
+    [4] = "Left Curved"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Ball"):WaitForChild("Kick"):FireServer(unpack(args))
+end)
+
+bp:Bind("Gyro Shot", Enum.KeyCode.L, function()
+local args = {
+    [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
+    [2] = game:GetService("Workspace").Objects.Characters.osuhawia.HumanoidRootPart.CFrame,
+    [3] = 100,
+    [4] = "Gyro Shot"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Ball"):WaitForChild("Kick"):FireServer(unpack(args))
+end)
+
+
 
