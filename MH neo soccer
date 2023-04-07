@@ -23,6 +23,10 @@ game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 game.Workspace.Gravity = 196.2
 end)
 
+lp:Button("Set Grivity to 122", function()
+game.Workspace.Gravity = 122
+end)
+
 lp:Seperator()
 
 lp:Toggle("Always Super Speed",false, function(run)
