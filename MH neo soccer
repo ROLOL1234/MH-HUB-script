@@ -74,7 +74,7 @@ end)
 bp:Bind("Long Shot", Enum.KeyCode.B, function()
 local args = {
     [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
-    [2] = game.Players.LocalPlayer.Character.HUmanoidRootPart.CFrame,
+    [2] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [3] = 100,
     [4] = "Long Shot"
 }
@@ -85,7 +85,7 @@ end)
 bp:Bind("Right Curved Shot", Enum.KeyCode.N, function()
 local args = {
     [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
-    [2] = game.Players.LocalPlayer.Character.HUmanoidRootPart.CFrame,
+    [2] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [3] = 100,
     [4] = "Right Curved"
 }
@@ -96,7 +96,7 @@ end)
 bp:Bind("Left Curved Shot", Enum.KeyCode.J, function()
 local args = {
     [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
-    [2] = game.Players.LocalPlayer.Character.HUmanoidRootPart.CFrame,
+    [2] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [3] = 100,
     [4] = "Left Curved"
 }
@@ -107,7 +107,7 @@ end)
 bp:Bind("Gyro Shot", Enum.KeyCode.L, function()
 local args = {
     [1] = workspace:WaitForChild("Objects"):WaitForChild("Balls"):WaitForChild("PLAIN_BALL"),
-    [2] = game.Players.LocalPlayer.Character.HUmanoidRootPart.CFrame,
+    [2] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [3] = 100,
     [4] = "Gyro Shot"
 }
